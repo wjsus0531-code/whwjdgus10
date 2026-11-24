@@ -1,0 +1,318 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", "Noto Sans KR", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: "Plus Jakarta Sans", "Noto Sans KR", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes arena-scan {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(220%);
+  }
+}
+
+@keyframes orbit-cw {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-ccw {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes surge-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.2;
+  }
+  65% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes surge-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+  65% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes clash-tug {
+  0% {
+    transform: translateX(-24px);
+  }
+  20% {
+    transform: translateX(28px);
+  }
+  44% {
+    transform: translateX(-36px);
+  }
+  68% {
+    transform: translateX(20px);
+  }
+  84% {
+    transform: translateX(-14px);
+  }
+  100% {
+    transform: translateX(-24px);
+  }
+}
+
+@keyframes clash-tug-intense {
+  0% {
+    transform: translateX(-44px);
+  }
+  25% {
+    transform: translateX(46px);
+  }
+  50% {
+    transform: translateX(-34px);
+  }
+  75% {
+    transform: translateX(38px);
+  }
+  100% {
+    transform: translateX(-44px);
+  }
+}
+
+@keyframes countdown-slam {
+  0% {
+    opacity: 0;
+    transform: scale(2.15) translateY(-6px);
+  }
+  36% {
+    opacity: 1;
+    transform: scale(0.91) translateY(1px);
+  }
+  62% {
+    opacity: 1;
+    transform: scale(1.05) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes stage-recoil {
+  0% {
+    transform: scale(1.012);
+  }
+  45% {
+    transform: scale(0.996);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shockwave-ring {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.55);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.15);
+  }
+}
+
+@keyframes shockwave-ring-outer {
+  0% {
+    opacity: 0.55;
+    transform: scale(0.65);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.65);
+  }
+}
+
+@keyframes flash-burst {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.75);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.55);
+  }
+}
+
+@keyframes result-reveal-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.93);
+  }
+  48% {
+    opacity: 1;
+    transform: translateY(-3px) scale(1.018);
+  }
+  75% {
+    transform: translateY(1px) scale(0.997);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes sheen-sweep {
+  0% {
+    transform: translateX(-140%) skewX(-18deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateX(240%) skewX(-18deg);
+    opacity: 0;
+  }
+}
+
+@keyframes trophy-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotate(-22deg);
+  }
+  58% {
+    opacity: 1;
+    transform: scale(1.32) rotate(8deg);
+  }
+  80% {
+    transform: scale(0.92) rotate(-3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes score-lock-pop {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.18);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-arena-scan {
+  animation: arena-scan 1.9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-orbit-cw {
+  animation: orbit-cw 5.5s linear infinite;
+}
+
+.animate-orbit-ccw {
+  animation: orbit-ccw 3.8s linear infinite;
+}
+
+.animate-surge-left {
+  animation: surge-left 1.35s cubic-bezier(0.3, 0, 0.2, 1) infinite;
+}
+
+.animate-surge-right {
+  animation: surge-right 1.35s cubic-bezier(0.3, 0, 0.2, 1) infinite;
+}
+
+.animate-clash-tug {
+  animation: clash-tug 2.1s ease-in-out infinite;
+}
+
+.animate-clash-tug-intense {
+  animation: clash-tug-intense 0.48s ease-in-out infinite;
+}
+
+.animate-countdown-slam {
+  animation: countdown-slam 0.52s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-stage-recoil {
+  animation: stage-recoil 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-shockwave-ring {
+  animation: shockwave-ring 0.92s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-shockwave-ring-outer {
+  animation: shockwave-ring-outer 0.98s 0.09s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-flash-burst {
+  animation: flash-burst 0.72s ease-out both;
+}
+
+.animate-result-reveal {
+  animation: result-reveal-in 0.52s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-sheen-sweep {
+  animation: sheen-sweep 1.05s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-trophy-pop {
+  animation: trophy-pop 0.65s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-score-lock {
+  animation: score-lock-pop 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
