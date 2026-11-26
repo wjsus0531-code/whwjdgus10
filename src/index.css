@@ -1,0 +1,111 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Bricolage Grotesque', 'Noto Sans KR', system-ui, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', 'Noto Sans KR', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    background-color: #13161f;
+    color: #f1f3f9;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(1100px 560px at 14% -8%, rgba(79, 139, 255, 0.11), transparent 62%),
+      radial-gradient(960px 520px at 88% -6%, rgba(255, 94, 87, 0.1), transparent 60%),
+      #13161f;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-tabular {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes arena-shake {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  15% { transform: translate3d(-8px, 4px, 0) rotate(-0.6deg); }
+  30% { transform: translate3d(8px, -5px, 0) rotate(0.6deg); }
+  45% { transform: translate3d(-6px, -3px, 0) rotate(-0.4deg); }
+  60% { transform: translate3d(6px, 4px, 0) rotate(0.4deg); }
+  75% { transform: translate3d(-4px, 2px, 0); }
+  90% { transform: translate3d(3px, -2px, 0); }
+}
+
+@keyframes shockwave-ring {
+  0% {
+    transform: scale(0.2);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+@keyframes slash-flash {
+  0% {
+    transform: scaleX(0.1) scaleY(0.4) rotate(-22deg);
+    opacity: 0;
+  }
+  25% {
+    transform: scaleX(1.15) scaleY(1.1) rotate(-22deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1.45) scaleY(0.15) rotate(-22deg);
+    opacity: 0;
+  }
+}
+
+@keyframes impact-flare {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+.animate-arena-shake {
+  animation: arena-shake 0.48s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.animate-shockwave {
+  animation: shockwave-ring 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slash {
+  animation: slash-flash 0.52s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-impact-flare {
+  animation: impact-flare 0.72s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-arena-shake,
+  .animate-shockwave,
+  .animate-slash,
+  .animate-impact-flare {
+    animation: none !important;
+  }
+}
